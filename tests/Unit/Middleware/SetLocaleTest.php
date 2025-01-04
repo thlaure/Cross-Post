@@ -17,8 +17,8 @@ class SetLocaleTest extends TestCase
         $request = Request::create($uri, Request::METHOD_GET);
         $route = new Route([Request::METHOD_GET], '/{locale?}/some-route', ['locale' => $locale]);
         $route->bind($request);
-        $request->setRouteResolver(fn() => $route);
-    
+        $request->setRouteResolver(fn () => $route);
+
         return $request;
     }
 
@@ -26,7 +26,7 @@ class SetLocaleTest extends TestCase
     {
         $request = $this->createBoundRequest('/en/some-route', 'en');
 
-        $middleware = new SetLocale();
+        $middleware = new SetLocale;
 
         $response = $middleware->handle($request, function ($request) {
             return response('OK', Response::HTTP_OK);
@@ -39,11 +39,11 @@ class SetLocaleTest extends TestCase
     public function test_handles_invalid_locale()
     {
         Log::shouldReceive('error')->once()->with('Invalid locale provided', ['locale' => 'invalid']);
-    
+
         $request = $this->createBoundRequest('/invalid/some-route', 'invalid');
-    
-        $middleware = new SetLocale();
-    
+
+        $middleware = new SetLocale;
+
         try {
             $middleware->handle($request, function ($request) {
                 return response('OK', Response::HTTP_OK);
@@ -57,7 +57,7 @@ class SetLocaleTest extends TestCase
     {
         $request = $this->createBoundRequest('/some-route');
 
-        $middleware = new SetLocale();
+        $middleware = new SetLocale;
 
         $response = $middleware->handle($request, function ($request) {
             return response('OK', Response::HTTP_OK);
