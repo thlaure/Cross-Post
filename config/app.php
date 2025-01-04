@@ -123,4 +123,19 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Custom values
+    |--------------------------------------------------------------------------
+    |
+    | These configuration options are custom values that are used throughout
+    | the application. You can add your own custom values here to be used
+    | throughout the application.
+    |
+    */
+    'custom' => [
+        'social_post' => [
+            'max_content_length' => env('SOCIAL_POST_MAX_CONTENT_LENGTH', 1000),
+        ],
+    ],
 ];
