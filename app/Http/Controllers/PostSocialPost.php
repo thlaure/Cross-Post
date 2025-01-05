@@ -24,13 +24,13 @@ class PostSocialPost extends Controller
             ]);
 
             return redirect()
-                ->route('page.social-post.create', ['locale' => $locale])
+                ->route('page.social-posts.create', ['locale' => $locale])
                 ->with('success', __('messages.success.generic'));
         } catch (\Exception $exception) {
             Log::error('Failed to create social post', ['exception' => $exception]);
 
             return redirect()
-                ->route('page.social-post.create', ['locale' => $locale])
+                ->route('page.social-posts.create', ['locale' => $locale])
                 ->with('error', __('messages.error.generic'));
         }
     }

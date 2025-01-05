@@ -8,6 +8,6 @@ class SocialPostCreate extends Controller
 {
     public function __invoke(): View
     {
-        return view('social-post.create');
+        return view('social-posts.create');
     }
 }

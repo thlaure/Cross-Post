@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect()->route('page.social-post.create', ['locale' => App::currentLocale()]);
+    return redirect()->route('page.social-posts.create', ['locale' => App::currentLocale()]);
 })->name('home');
 
 Route::middleware([SetLocale::class])->prefix('/{locale}')->group(function () {
-    Route::get('/social-posts/create', SocialPostCreate::class)->name('page.social-post.create');
-    Route::post('/social-posts', PostSocialPost::class)->name('post.social-post');
+    Route::get('/social-posts/create', SocialPostCreate::class)->name('page.social-posts.create');
+    Route::post('/social-posts', PostSocialPost::class)->name('post.social-posts');
 });
