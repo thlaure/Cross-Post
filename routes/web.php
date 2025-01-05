@@ -11,6 +11,6 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware([SetLocale::class])->prefix('/{locale}')->group(function () {
-    Route::get('/social-post/create', SocialPostCreate::class)->name('page.social-post.create');
-    Route::post('/social-post', PostSocialPost::class)->name('post.social-post');
+    Route::get('/social-posts/create', SocialPostCreate::class)->name('page.social-post.create');
+    Route::post('/social-posts', PostSocialPost::class)->name('post.social-post');
 });
