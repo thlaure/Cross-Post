@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --color-primary: theme(colors.blue.500);
+    --color-secondary: theme(colors.indigo.700);
+    --color-tertiary: theme(colors.orange.500);
+    --color-success-light: theme(colors.green.100);
+    --color-success-medium: theme(colors.green.500);
+    --color-success-deep: theme(colors.green.700);
+    --color-error: theme(colors.red.500);
+    --color-gray: theme(colors.stone.500);
+    --color-cta-from: theme(colors.orange.600);
+    --color-cta-via: theme(colors.red.500);
+    --color-cta-to: theme(colors.pink.500);
+    --color-cta-bg: theme(colors.orange.600);
+}

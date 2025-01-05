@@ -26,7 +26,7 @@
 <body class="font-sans antialiased h-screen">
     @include('layouts.navbar')
 
-    <main role="main" class="container px-4 md:px-0 max-w-4xl">
+    <main role="main" class="container px-4 md:px-0 max-w-4xl mt-10">
         @yield('content')
     </main>
 
