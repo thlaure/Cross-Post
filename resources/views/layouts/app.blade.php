@@ -18,7 +18,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
 
-    <title>CrossPost - @yield('title')</title>
+    <title>{{ config('app.name') }} - @yield('title')</title>
 </head>
 <body>
     @include('layouts.navbar')
