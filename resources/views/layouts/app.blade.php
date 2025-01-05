@@ -19,11 +19,14 @@
     <meta property="og:locale:alternate" content="fr_FR">
 
     <title>{{ config('app.name') }} - @yield('title')</title>
+
+    @vite('resources/css/app.css')
+    @yield('styles')
 </head>
-<body>
+<body class="font-sans antialiased h-screen">
     @include('layouts.navbar')
 
-    <main role="main">
+    <main role="main" class="container px-4 md:px-0 max-w-4xl">
         @yield('content')
     </main>
 
