@@ -7,7 +7,7 @@
 
 @include('layouts.message-success')
 
-<form method="POST" action="{{ route('post.social-post.create', ['locale' => App::currentLocale()]) }}" aria-labelledby="social-post-create-title">
+<form method="POST" action="{{ route('post.social-post', ['locale' => App::currentLocale()]) }}" aria-labelledby="social-post-create-title">
     @csrf
     @method('POST')
 
