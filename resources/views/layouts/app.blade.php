@@ -11,7 +11,7 @@
     <link rel="icon" href="" sizes="32x32" type="image/x-icon">
     <link rel="apple-touch-icon" href="">
 
-    <meta property="og:title" content="CrossPost">
+    <meta property="og:title" content="{{ config('app.name') }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
