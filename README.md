@@ -15,3 +15,26 @@ This project is a social media management tool that allows you to create, schedu
 - [PHPStan](https://phpstan.org/) at level 9 to check code consistency
 - [CS Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) to apply best practices and automatically fix issues
 - [PHPUnit](https://phpunit.de/index.html) for unit and functional testing
+
+
+## Features
+
+### Post creation:
+- [ ] Bluesky
+- [ ] Twitter / X
+- [ ] Threads
+
+### Post scheduling:
+- [ ] Bluesky
+- [ ] Twitter / X
+- [ ] Threads
+
+### Convert posts in threads:
+- [ ] Bluesky
+- [ ] Twitter / X
+- [ ] Threads
+
+### Convert posts into RSS feed:
+- [ ] Bluesky
+- [ ] Twitter / X
+- [ ] Threads
