@@ -20,7 +20,7 @@ export default {
                 'primary': 'var(--color-primary)',
                 'secondary': 'var(--color-secondary)',
                 'tertiary': 'var(--color-tertiary)',
-                'gray': 'var(--color-gray)',
+                'muted': 'var(--color-muted)',
                 'success': {
                     'border': 'var(--color-success-medium)',
                     'background': 'var(--color-success-light)',
@@ -31,17 +31,6 @@ export default {
                     'border': 'var(--color-error)',
                     'text': 'var(--color-error)',
                 },
-                'cta': {
-                    'from': 'var(--color-cta-from)',
-                    'via': 'var(--color-cta-via)',
-                    'to': 'var(--color-cta-to)',
-                    'from-hover': 'rgba(var(--color-cta-from), 0.8)',
-                    'via-hover': 'rgba(var(--color-cta-via), 0.8)',
-                    'to-hover': 'rgba(var(--color-cta-to), 0.8)',
-                    'bg': 'var(--color-cta-bg)',
-                    'border': 'var(--color-cta-border)',
-                    'bg-hover': 'rgba(var(--color-cta-bg), 0.6)',
-                }
             },
         },
         container: {

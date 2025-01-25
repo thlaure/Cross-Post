@@ -26,7 +26,7 @@
 
         <div
             id="content-help"
-            class="text-gray text-sm"
+            class="text-muted text-sm"
         >
             {{ __('messages.social_post.content_help', ['max' => config('app.custom.social_post.max_content_length')]) }}
         </div>
@@ -38,8 +38,8 @@
 
     <button
         type="submit"
-        class="shadow-lg mt-4 px-4 py-2 border-solid border-1 rounded-lg font-semibold border-tertiary text-white
-        bg-cta-gradient hover:opacity-90 hover:shadow-2xl"
+        class="shadow-lg mt-4 px-4 py-2 border-solid border-1 rounded-lg font-semibold border-tertiary text-secondary
+        bg-primary hover:opacity-90 hover:shadow-2xl"
         aria-label="{{ __('messages.button.submit') }}"
     >
         {{ __('messages.button.submit') }}
