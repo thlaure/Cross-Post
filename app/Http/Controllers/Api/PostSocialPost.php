@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSocialPostRequest;
 use App\Models\SocialPost;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\App;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
 class PostSocialPost extends Controller
 {
-    public function __invoke(StoreSocialPostRequest $request): RedirectResponse
+    public function __invoke(StoreSocialPostRequest $request): JsonResponse
     {
-        $locale = App::currentLocale();
-
         try {
             $request->validated();
+
             /** @var string $postContent */
             $postContent = $request->safe()->input('content');
 
@@ -23,15 +23,17 @@ class PostSocialPost extends Controller
                 'content' => strip_tags($postContent),
             ]);
 
-            return redirect()
-                ->route('page.social-posts.create', ['locale' => $locale])
-                ->with('success', __('messages.success.generic'));
+            return response()->json([
+                'message' => __('messages.success.generic'),
+                'status' => Response::HTTP_CREATED,
+            ]);
         } catch (\Exception $exception) {
             Log::error('Failed to create social post', ['exception' => $exception]);
 
-            return redirect()
-                ->route('page.social-posts.create', ['locale' => $locale])
-                ->with('error', __('messages.error.generic'));
+            return response()->json([
+                'message' => __('messages.error.generic'),
+                'status' => Response::HTTP_INTERNAL_SERVER_ERROR,
+            ]);
         }
     }
 }

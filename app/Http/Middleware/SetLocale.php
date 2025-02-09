@@ -3,20 +3,21 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
-use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
 {
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next): Response|JsonResponse
     {
-        $locale = $request->route('locale') ?? config('app.locale');
+        $locale = $request->route('locale') ?? $request->header('Accept-Language') ?? config('app.locale', 'en');
 
-        if (! in_array($locale, ['en', 'fr']) || ! is_string($locale)) {
+        if (! is_string($locale) || ! in_array($locale, ['en', 'fr'])) {
             Log::error('Invalid locale provided', ['locale' => $locale]);
-            abort(Response::HTTP_BAD_REQUEST);
+            $locale = 'en';
         }
 
         App::setLocale($locale);

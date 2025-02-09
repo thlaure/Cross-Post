@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostSocialPost;
-use App\Http\Controllers\SocialPostCreate;
+use App\Http\Controllers\Web\SocialPostCreate;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -12,5 +11,4 @@ Route::get('/', function () {
 
 Route::middleware([SetLocale::class])->prefix('/{locale}')->group(function () {
     Route::get('/social-posts/create', SocialPostCreate::class)->name('page.social-posts.create');
-    Route::post('/social-posts', PostSocialPost::class)->name('post.social-posts');
 });
