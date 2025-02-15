@@ -18,17 +18,15 @@
             id="content"
             cols="30"
             rows="10"
-            class="border-solid border-2 rounded-lg @error('content') border-error-border @enderror"
+            class="border-solid border-2 rounded-lg py-2 px-4 @error('content') border-error-border @enderror"
             aria-describedby="content-help @error('content') content-error @enderror"
-        >
-            {{ old('content') }}
-        </textarea>
+        >{{ old('content') }}</textarea>
 
         <div
             id="content-help"
             class="text-muted text-sm"
         >
-            {{ __('messages.social_post.content_help', ['max' => config('app.custom.social_post.max_content_length')]) }}
+            {{ __('messages.social_post.content_help', ['max' => config('app.social_post.max_content_length')]) }}
         </div>
     
         @error('content')

@@ -133,9 +133,11 @@ return [
     | throughout the application.
     |
     */
-    'custom' => [
-        'social_post' => [
-            'max_content_length' => env('SOCIAL_POST_MAX_CONTENT_LENGTH', 1000),
-        ],
+    'social_post' => [
+        'max_content_length' => env('SOCIAL_POST_MAX_CONTENT_LENGTH', 1000),
+    ],
+    'bluesky' => [
+        'username' => env('BLUESKY_USERNAME', ''),
+        'app_password' => env('BLUESKY_APP_PASSWORD', ''),
     ],
 ];
