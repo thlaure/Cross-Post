@@ -38,3 +38,21 @@ This project is a social media management tool that allows you to create, schedu
 - [ ] Bluesky
 - [ ] Twitter / X
 - [ ] Threads
+
+### Following sources
+- [ ] RSS feeds
+- [ ] Social medias accounts
+
+### Saving content
+- [ ] Articles
+- [ ] Twitter posts
+- [ ] Threads posts
+- [ ] Bluesky posts
+- [ ] Pocket connection
+- [ ] Obsidian connection
+- [ ] Notion connection
+
+### Exporting content
+- [ ] PDF
+- [ ] JSON
+- [ ] Mardown
